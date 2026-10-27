@@ -3,215 +3,344 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>طراحی سایت فارسی · نمونه‌کارها</title>
-<meta name="description" content="۱۴ سایت فارسی نمونه در پنج سبک طراحی؛ قالب آماده با برند شما یا طراحی اختصاصی از صفر.">
-<meta name="theme-color" content="#f4f1ea">
+<title>ویترین طراحی سایت</title>
+<meta name="description" content="۱۵ سایت فارسی نمونه در چهار حال‌وهوا؛ قالب آماده با برند شما یا طراحی اختصاصی از صفر.">
+<meta name="theme-color" content="#12110F">
 <link rel="preload" href="fonts/Vazirmatn.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face { font-family: "Vazirmatn"; src: url("fonts/Vazirmatn.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
-:root { --ground: #f4f1ea; --ink: #16140f; --muted: #5b564b; --line: #d9d3c4; --accent: #b4441c; --card: #fffdf8; }
+:root {
+  --bg: #12110F; --bg2: #1B1A17; --ink: #F3EEE3; --muted: #ABA597; --line: #2E2C27;
+  --saffron: #F0A63A; --pad: 16px;
+}
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { -webkit-text-size-adjust: 100%; }
-body { font-family: "Vazirmatn", Tahoma, sans-serif; background: var(--ground); color: var(--ink); line-height: 1.8; padding: 0 16px 112px; }
-main { max-width: 720px; margin: 0 auto; }
-header { padding: 40px 0 24px; }
-.kicker { color: var(--accent); font-weight: 700; font-size: 14px; }
-h1 { font-size: clamp(28px, 8vw, 44px); font-weight: 900; line-height: 1.35; margin: 6px 0 12px; }
-.lead { color: var(--muted); font-size: 16px; max-width: 34em; }
-.offer { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; margin: 24px 0 8px; }
-.offer div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
-.offer b { display: block; font-size: 16px; font-weight: 800; }
-.offer span { color: var(--muted); font-size: 14px; line-height: 1.7; }
-h2 { font-size: 18px; font-weight: 800; margin: 28px 0 12px; }
-.grid { list-style: none; display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-@media (min-width: 640px) { .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-.card a { position: relative; display: block; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: inherit; text-decoration: none; }
-.card a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; background: var(--line); }
-.chip { position: absolute; top: 8px; right: 8px; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: var(--ink); color: #fff; }
-.chip--template { background: #fff; color: var(--ink); border: 1px solid var(--ink); }
-.meta { display: block; padding: 10px 12px 12px; }
-.meta strong { display: block; font-size: 17px; font-weight: 800; }
-.meta span, .meta small { display: block; font-size: 13px; color: var(--muted); line-height: 1.6; }
-.note { color: var(--muted); font-size: 13px; margin-top: 20px; }
-.cta { position: fixed; inset: auto 0 0 0; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: linear-gradient(transparent, var(--ground) 30%); display: flex; gap: 10px; justify-content: center; }
-.btn { flex: 1; max-width: 340px; text-align: center; font-weight: 800; font-size: 16px; padding: 14px 18px; border-radius: 999px; background: var(--ink); color: #fff; text-decoration: none; }
-.btn--alt { background: var(--accent); }
-.btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { font-family: "Vazirmatn", Tahoma, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.8; font-feature-settings: "ss01"; padding-bottom: 104px; overflow-x: hidden; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--saffron); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--pad); }
+
+/* hero */
+.hero { padding: 44px 0 28px; position: relative; }
+.kicker { display: inline-flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 700; color: var(--saffron); }
+.kicker::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--saffron); }
+h1 { font-weight: 900; font-size: clamp(40px, 12.5vw, 96px); line-height: 1.12; margin: 14px 0 18px; word-spacing: .02em; }
+h1 .w { display: inline-block; opacity: 0; transform: translateY(.35em); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+h1 .w:nth-child(2) { animation-delay: .08s; } h1 .w:nth-child(3) { animation-delay: .16s; }
+h1 .w:nth-child(4) { animation-delay: .24s; } h1 .w:nth-child(5) { animation-delay: .32s; }
+h1 .hl { color: var(--saffron); }
+@keyframes rise { to { opacity: 1; transform: none; } }
+.lead { color: var(--muted); font-size: 17px; max-width: 32em; }
+.index { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 26px; }
+.index a { display: flex; align-items: center; gap: 10px; text-decoration: none; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg2); font-weight: 700; font-size: 15px; min-height: 52px; }
+.index a span { color: var(--saffron); font-size: 13px; }
+.index a em { margin-inline-start: auto; font-style: normal; color: var(--muted); font-size: 13px; font-weight: 500; }
+
+/* families */
+.family { padding: 36px 0 8px; border-top: 1px solid var(--line); margin-top: 28px; }
+.fhead { display: flex; gap: 14px; align-items: flex-start; }
+.num { font-weight: 900; font-size: 44px; line-height: 1; color: transparent; -webkit-text-stroke: 1.2px var(--saffron); }
+h2 { font-size: 24px; font-weight: 900; line-height: 1.4; }
+h2 small { display: block; font-size: 13px; font-weight: 500; color: var(--muted); }
+.fhead p { color: var(--muted); font-size: 15px; margin-top: 6px; max-width: 36em; }
+.rail { list-style: none; display: grid; grid-auto-flow: column; grid-auto-columns: 62%; gap: 14px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; padding: 22px var(--pad) 10px; margin: 0 calc(-1 * var(--pad)); scrollbar-width: none; }
+.rail::-webkit-scrollbar { display: none; }
+.site { scroll-snap-align: start; }
+.site a { display: block; text-decoration: none; }
+.chip { display: grid; place-items: center; aspect-ratio: 4 / 5; border-radius: 22px; background: var(--g); padding: 18px 0 0; overflow: hidden; position: relative; }
+.chip::after { content: ""; position: absolute; inset: auto 0 0 0; height: 5px; background: var(--a); }
+.phone { display: block; width: 72%; align-self: end; border: 6px solid #0B0B0A; border-bottom: 0; border-radius: 26px 26px 0 0; overflow: hidden; background: #0B0B0A; box-shadow: 0 20px 40px -12px rgba(0,0,0,.45); transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+.phone img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 2; object-fit: cover; object-position: top; border-radius: 20px 20px 0 0; }
+.site a:hover .phone, .site a:focus-visible .phone { transform: translateY(-8px); }
+.label { display: block; padding: 12px 4px 0; }
+.label strong { display: block; font-size: 19px; font-weight: 800; line-height: 1.5; }
+.trade { display: block; color: var(--muted); font-size: 14px; }
+.kind { display: inline-block; font-size: 12px; font-weight: 700; padding: 1px 10px; border-radius: 999px; margin-bottom: 4px; }
+.kind--template { background: var(--saffron); color: #1A1306; }
+.kind--sample { border: 1px solid var(--muted); color: var(--ink); }
+@media (min-width: 720px) { .rail { grid-auto-columns: 30%; } }
+@media (min-width: 1040px) { .rail { grid-auto-flow: row; grid-template-columns: repeat(4, 1fr); overflow: visible; padding-inline: 0; margin: 0; } }
+
+/* offer + how */
+.offer { display: grid; gap: 12px; margin-top: 44px; }
+.tier { border-radius: 22px; padding: 22px 20px; background: var(--bg2); border: 1px solid var(--line); }
+.tier--a { background: var(--saffron); color: #1A1306; border: 0; }
+.tier b { display: block; font-size: 22px; font-weight: 900; }
+.tier p { font-size: 15px; margin-top: 4px; }
+.tier--b p { color: var(--muted); }
+@media (min-width: 720px) { .offer { grid-template-columns: 1fr 1fr; } }
+.how { margin-top: 40px; }
+.how h2 { margin-bottom: 14px; }
+.steps { list-style: none; counter-reset: s; display: grid; gap: 10px; }
+.steps li { counter-increment: s; display: flex; gap: 14px; align-items: baseline; font-size: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.steps li::before { content: counter(s, persian); font-weight: 900; color: var(--saffron); font-size: 22px; min-width: 1.2em; }
+.note { color: var(--muted); font-size: 13px; margin: 28px 0 8px; }
+
+/* sticky contact */
+.cta { position: fixed; inset: auto 0 0 0; z-index: 5; padding: 14px var(--pad) calc(14px + env(safe-area-inset-bottom)); background: linear-gradient(rgba(18,17,15,0), var(--bg) 35%); display: flex; gap: 10px; justify-content: center; }
+.btn { flex: 1; max-width: 360px; min-height: 54px; display: grid; place-items: center; font-weight: 800; font-size: 17px; border-radius: 999px; background: var(--ink); color: var(--bg); text-decoration: none; box-shadow: 0 10px 30px -10px rgba(0,0,0,.6); }
+.btn--alt { background: var(--saffron); color: #1A1306; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  h1 .w { animation: none; opacity: 1; transform: none; }
+  .phone { transition: none; }
+}
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <p class="kicker">طراحی سایت فارسی</p>
-    <h1>۱۴ سایت فارسی، در پنج سبک طراحی</h1>
-    <p class="lead">هر کدام را باز کنید و روی گوشی خودتان ببینید. سایت شما می‌تواند یکی از همین‌ها با برند خودتان باشد، یا از صفر برای کسب‌وکارتان طراحی شود.</p>
-    <div class="offer">
-      <div><b>قالب آماده</b><span>یکی از قالب‌ها با نام، رنگ، عکس و محتوای شما</span></div>
-      <div><b>طراحی اختصاصی</b><span>سایتی از صفر، فقط برای کسب‌وکار شما</span></div>
-    </div>
+<main class="wrap">
+  <header class="hero">
+    <p class="kicker">ویترین طراحی سایت</p>
+    <h1><span class="w">۱۵</span> <span class="w">سایت،</span> <span class="w hl">چهار</span> <span class="w">حال‌وهوا</span></h1>
+    <p class="lead">همه فارسی، راست‌به‌چپ و ساخته‌شده برای گوشی. یکی را باز کنید و ببینید سایت کسب‌وکار شما چه شکلی می‌تواند باشد.</p>
+    <ul class="index">
+      <li><a href="#f1"><span>۰۱</span>آرام و لوکس<em>۷</em></a></li>
+      <li><a href="#f2"><span>۰۲</span>سینمایی و پرحرکت<em>۳</em></a></li>
+      <li><a href="#f3"><span>۰۳</span>جسور و گرافیکی<em>۲</em></a></li>
+      <li><a href="#f4"><span>۰۴</span>دقیق و فنی<em>۳</em></a></li>
+    </ul>
   </header>
-  <h2>نمونه‌کارها</h2>
-  <ul class="grid">
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/diseh/" rel="noopener">
-          <img src="media/diseh.webp" width="480" height="640" alt="صفحهٔ اول سایت دیسه" loading="eager" decoding="async">
-          <span class="chip chip--sample">نمونه‌کار اختصاصی</span>
-          <span class="meta">
-            <strong>دیسه</strong>
-            <span>کلینیک پوست، دندان و مو</span>
-            <small>سبک: حرکت طراحی‌شده</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/Nabat/" rel="noopener">
-          <img src="media/nabat.webp" width="480" height="640" alt="صفحهٔ اول سایت نبات" loading="eager" decoding="async">
-          <span class="chip chip--sample">نمونه‌کار اختصاصی</span>
-          <span class="meta">
-            <strong>نبات</strong>
-            <span>شیرینی و قند</span>
-            <small>سبک: نقش‌مایهٔ ایرانی</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/varagh/" rel="noopener">
-          <img src="media/varagh.webp" width="480" height="640" alt="صفحهٔ اول سایت ورق" loading="lazy" decoding="async">
-          <span class="chip chip--sample">نمونه‌کار اختصاصی</span>
-          <span class="meta">
-            <strong>ورق</strong>
-            <span>استودیوی طراحی گرافیک</span>
-            <small>سبک: بروتالیست</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/sanjeh/" rel="noopener">
-          <img src="media/sanjeh.webp" width="480" height="640" alt="صفحهٔ اول سایت سنجه" loading="lazy" decoding="async">
-          <span class="chip chip--sample">نمونه‌کار اختصاصی</span>
-          <span class="meta">
-            <strong>سنجه</strong>
-            <span>قطعات صنعتی و ابزار دقیق</span>
-            <small>سبک: شبکهٔ سوئیسی</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/taraz/" rel="noopener">
-          <img src="media/taraz.webp" width="480" height="640" alt="صفحهٔ اول سایت تراز" loading="lazy" decoding="async">
-          <span class="chip chip--sample">نمونه‌کار اختصاصی</span>
-          <span class="meta">
-            <strong>تراز</strong>
-            <span>نرم‌افزار مالی</span>
-            <small>سبک: کارت‌های بنتو</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/shabaneh/" rel="noopener">
-          <img src="media/shabaneh.webp" width="480" height="640" alt="صفحهٔ اول سایت شبانه" loading="lazy" decoding="async">
-          <span class="chip chip--sample">نمونه‌کار اختصاصی</span>
-          <span class="meta">
-            <strong>شبانه</strong>
-            <span>رستوران</span>
-            <small>سبک: سینمایی تیره</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/shamim/" rel="noopener">
-          <img src="media/shamim.webp" width="480" height="640" alt="صفحهٔ اول سایت شمیم" loading="lazy" decoding="async">
-          <span class="chip chip--sample">نمونه‌کار اختصاصی</span>
-          <span class="meta">
-            <strong>شمیم</strong>
-            <span>عطر · معرفی یک محصول</span>
-            <small>سبک: تک‌صفحه‌ای اسکرولی</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/dadavar/" rel="noopener">
-          <img src="media/dadavar.webp" width="480" height="640" alt="صفحهٔ اول سایت دادآور" loading="lazy" decoding="async">
-          <span class="chip chip--sample">نمونه‌کار اختصاصی</span>
-          <span class="meta">
-            <strong>دادآور</strong>
-            <span>دفتر حقوقی</span>
-            <small>سبک: نوشتاری و رسمی</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/zarnegar/" rel="noopener">
-          <img src="media/zarnegar.webp" width="480" height="640" alt="صفحهٔ اول سایت زرنگار" loading="lazy" decoding="async">
-          <span class="chip chip--template">قالب آماده</span>
-          <span class="meta">
-            <strong>زرنگار</strong>
-            <span>طلا و جواهر</span>
-            <small>سبک: ادیتوریال</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/cosmetics/" rel="noopener">
-          <img src="media/parnian.webp" width="480" height="640" alt="صفحهٔ اول سایت پرنیان" loading="lazy" decoding="async">
-          <span class="chip chip--template">قالب آماده</span>
-          <span class="meta">
-            <strong>پرنیان</strong>
-            <span>محصولات مراقبت پوست</span>
-            <small>سبک: ادیتوریال</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/avineh/" rel="noopener">
-          <img src="media/avineh.webp" width="480" height="640" alt="صفحهٔ اول سایت آوینه" loading="lazy" decoding="async">
-          <span class="chip chip--template">قالب آماده</span>
-          <span class="meta">
-            <strong>آوینه</strong>
-            <span>مزون لباس عروس و مجلسی</span>
-            <small>سبک: ادیتوریال</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/karaneh/" rel="noopener">
-          <img src="media/karaneh.webp" width="480" height="640" alt="صفحهٔ اول سایت کرانه" loading="lazy" decoding="async">
-          <span class="chip chip--template">قالب آماده</span>
-          <span class="meta">
-            <strong>کرانه</strong>
-            <span>معماری داخلی</span>
-            <small>سبک: ادیتوریال</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/naarvan/" rel="noopener">
-          <img src="media/naarvan.webp" width="480" height="640" alt="صفحهٔ اول سایت نارون" loading="lazy" decoding="async">
-          <span class="chip chip--template">قالب آماده</span>
-          <span class="meta">
-            <strong>نارون</strong>
-            <span>مبلمان چوبی</span>
-            <small>سبک: ادیتوریال</small>
-          </span>
-        </a>
-      </li>
-      <li class="card">
-        <a href="https://barry-amirahmadi.github.io/naghshineh/" rel="noopener">
-          <img src="media/naghshineh.webp" width="480" height="640" alt="صفحهٔ اول سایت نقشینه" loading="lazy" decoding="async">
-          <span class="chip chip--template">قالب آماده</span>
-          <span class="meta">
-            <strong>نقشینه</strong>
-            <span>فرش دستباف</span>
-            <small>سبک: ادیتوریال</small>
-          </span>
-        </a>
-      </li>
-  </ul>
-  <p class="note" id="contact">همهٔ برندهای این صفحه ساختگی‌اند و فقط برای نمایش طراحی ساخته شده‌اند.</p>
+  <section class="family" id="f1" aria-labelledby="f1h">
+    <header class="fhead">
+      <span class="num">۰۱</span>
+      <div>
+        <h2 id="f1h">آرام و لوکس <small>ادیتوریال · ۷ سایت</small></h2>
+        <p>برای کالایی که خریدار رویش مکث می‌کند: جواهر، پوست و زیبایی، مزون، مبلمان، فرش، دکوراسیون.</p>
+      </div>
+    </header>
+    <ul class="rail">
+        <li class="site" style="--g:#F2EEE6;--a:#8A6E3C">
+          <a href="https://barry-amirahmadi.github.io/zarnegar/" rel="noopener" aria-label="زرنگار، طلا و جواهر، باز کردن سایت">
+            <span class="chip" style="--g:#F2EEE6">
+              <span class="phone"><img src="media/zarnegar.webp" width="420" height="840" alt="" loading="eager" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--template">قالب آماده</span>
+              <strong>زرنگار</strong>
+              <span class="trade">طلا و جواهر</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#FAFAF9;--a:#A06000">
+          <a href="https://barry-amirahmadi.github.io/jewelry-site/" rel="noopener" aria-label="مهرآوا، جواهرات · دوزبانه، باز کردن سایت">
+            <span class="chip" style="--g:#FAFAF9">
+              <span class="phone"><img src="media/mehrava.webp" width="420" height="840" alt="" loading="eager" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--sample">طراحی اختصاصی</span>
+              <strong>مهرآوا</strong>
+              <span class="trade">جواهرات · دوزبانه</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#EAE9E3;--a:#5F8A85">
+          <a href="https://barry-amirahmadi.github.io/cosmetics/" rel="noopener" aria-label="پرنیان، محصولات مراقبت پوست، باز کردن سایت">
+            <span class="chip" style="--g:#EAE9E3">
+              <span class="phone"><img src="media/parnian.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--template">قالب آماده</span>
+              <strong>پرنیان</strong>
+              <span class="trade">محصولات مراقبت پوست</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#E2E5E3;--a:#B08D57">
+          <a href="https://barry-amirahmadi.github.io/avineh/" rel="noopener" aria-label="آوینه، مزون عروس و مجلسی، باز کردن سایت">
+            <span class="chip" style="--g:#E2E5E3">
+              <span class="phone"><img src="media/avineh.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--template">قالب آماده</span>
+              <strong>آوینه</strong>
+              <span class="trade">مزون عروس و مجلسی</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#EFEFED;--a:#9E5B3E">
+          <a href="https://barry-amirahmadi.github.io/karaneh/" rel="noopener" aria-label="کرانه، معماری داخلی، باز کردن سایت">
+            <span class="chip" style="--g:#EFEFED">
+              <span class="phone"><img src="media/karaneh.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--template">قالب آماده</span>
+              <strong>کرانه</strong>
+              <span class="trade">معماری داخلی</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#EFEAE1;--a:#6C825B">
+          <a href="https://barry-amirahmadi.github.io/naarvan/" rel="noopener" aria-label="نارون، مبلمان چوبی، باز کردن سایت">
+            <span class="chip" style="--g:#EFEAE1">
+              <span class="phone"><img src="media/naarvan.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--template">قالب آماده</span>
+              <strong>نارون</strong>
+              <span class="trade">مبلمان چوبی</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#EFEAE0;--a:#8E4A3F">
+          <a href="https://barry-amirahmadi.github.io/naghshineh/" rel="noopener" aria-label="نقشینه، فرش دستباف، باز کردن سایت">
+            <span class="chip" style="--g:#EFEAE0">
+              <span class="phone"><img src="media/naghshineh.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--template">قالب آماده</span>
+              <strong>نقشینه</strong>
+              <span class="trade">فرش دستباف</span>
+            </span>
+          </a>
+        </li>
+    </ul>
+  </section>
+  <section class="family" id="f2" aria-labelledby="f2h">
+    <header class="fhead">
+      <span class="num">۰۲</span>
+      <div>
+        <h2 id="f2h">سینمایی و پرحرکت <small>حرکت و تصویر · ۳ سایت</small></h2>
+        <p>برای جایی که حس اول همه‌چیز است: کلینیک، رستوران، عطر، معرفی یک محصول تازه.</p>
+      </div>
+    </header>
+    <ul class="rail">
+        <li class="site" style="--g:#F6F1EE;--a:#8A8A8A">
+          <a href="https://barry-amirahmadi.github.io/diseh/" rel="noopener" aria-label="دیسه، کلینیک پوست، دندان و مو، باز کردن سایت">
+            <span class="chip" style="--g:#F6F1EE">
+              <span class="phone"><img src="media/diseh.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--sample">طراحی اختصاصی</span>
+              <strong>دیسه</strong>
+              <span class="trade">کلینیک پوست، دندان و مو</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#0C0A08;--a:#704010">
+          <a href="https://barry-amirahmadi.github.io/shabaneh/" rel="noopener" aria-label="شبانه، رستوران، باز کردن سایت">
+            <span class="chip" style="--g:#0C0A08">
+              <span class="phone"><img src="media/shabaneh.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--sample">طراحی اختصاصی</span>
+              <strong>شبانه</strong>
+              <span class="trade">رستوران</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#F2F5F4;--a:#8A8A8A">
+          <a href="https://barry-amirahmadi.github.io/shamim/" rel="noopener" aria-label="شمیم، عطر · یک صفحه، باز کردن سایت">
+            <span class="chip" style="--g:#F2F5F4">
+              <span class="phone"><img src="media/shamim.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--sample">طراحی اختصاصی</span>
+              <strong>شمیم</strong>
+              <span class="trade">عطر · یک صفحه</span>
+            </span>
+          </a>
+        </li>
+    </ul>
+  </section>
+  <section class="family" id="f3" aria-labelledby="f3h">
+    <header class="fhead">
+      <span class="num">۰۳</span>
+      <div>
+        <h2 id="f3h">جسور و گرافیکی <small>بروتالیست و نقش‌مایه · ۲ سایت</small></h2>
+        <p>برای برندی که باید دیده شود: استودیوی طراحی، شیرینی و قنادی، پوشاک، رویداد.</p>
+      </div>
+    </header>
+    <ul class="rail">
+        <li class="site" style="--g:#F2F2F0;--a:#FF3B00">
+          <a href="https://barry-amirahmadi.github.io/varagh/" rel="noopener" aria-label="ورق، استودیوی طراحی گرافیک، باز کردن سایت">
+            <span class="chip" style="--g:#F2F2F0">
+              <span class="phone"><img src="media/varagh.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--sample">طراحی اختصاصی</span>
+              <strong>ورق</strong>
+              <span class="trade">استودیوی طراحی گرافیک</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#FFF8EC;--a:#E0C070">
+          <a href="https://barry-amirahmadi.github.io/Nabat/" rel="noopener" aria-label="نبات، شیرینی و قند، باز کردن سایت">
+            <span class="chip" style="--g:#FFF8EC">
+              <span class="phone"><img src="media/nabat.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--sample">طراحی اختصاصی</span>
+              <strong>نبات</strong>
+              <span class="trade">شیرینی و قند</span>
+            </span>
+          </a>
+        </li>
+    </ul>
+  </section>
+  <section class="family" id="f4" aria-labelledby="f4h">
+    <header class="fhead">
+      <span class="num">۰۴</span>
+      <div>
+        <h2 id="f4h">دقیق و فنی <small>سوئیسی، بنتو، نوشتاری · ۳ سایت</small></h2>
+        <p>برای خریداری که مشخصات می‌خواهد: صنعت و قطعات، نرم‌افزار، دفتر حقوقی، خدمات تخصصی.</p>
+      </div>
+    </header>
+    <ul class="rail">
+        <li class="site" style="--g:#FFFFFF;--a:#0047FF">
+          <a href="https://barry-amirahmadi.github.io/sanjeh/" rel="noopener" aria-label="سنجه، قطعات صنعتی و ابزار دقیق، باز کردن سایت">
+            <span class="chip" style="--g:#FFFFFF">
+              <span class="phone"><img src="media/sanjeh.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--sample">طراحی اختصاصی</span>
+              <strong>سنجه</strong>
+              <span class="trade">قطعات صنعتی و ابزار دقیق</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#0B0D12;--a:#20D0A0">
+          <a href="https://barry-amirahmadi.github.io/taraz/" rel="noopener" aria-label="تراز، نرم‌افزار مالی، باز کردن سایت">
+            <span class="chip" style="--g:#0B0D12">
+              <span class="phone"><img src="media/taraz.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--sample">طراحی اختصاصی</span>
+              <strong>تراز</strong>
+              <span class="trade">نرم‌افزار مالی</span>
+            </span>
+          </a>
+        </li>
+        <li class="site" style="--g:#181F26;--a:#8A8A8A">
+          <a href="https://barry-amirahmadi.github.io/dadavar/" rel="noopener" aria-label="دادآور، دفتر حقوقی، باز کردن سایت">
+            <span class="chip" style="--g:#181F26">
+              <span class="phone"><img src="media/dadavar.webp" width="420" height="840" alt="" loading="lazy" decoding="async"></span>
+            </span>
+            <span class="label">
+              <span class="kind kind--sample">طراحی اختصاصی</span>
+              <strong>دادآور</strong>
+              <span class="trade">دفتر حقوقی</span>
+            </span>
+          </a>
+        </li>
+    </ul>
+  </section>
+  <section class="offer" aria-label="دو راه همکاری">
+    <div class="tier tier--a"><b>قالب آماده</b><p>یکی از همین سایت‌ها، با نام، رنگ، عکس و محتوای کسب‌وکار شما.</p></div>
+    <div class="tier tier--b"><b>طراحی اختصاصی</b><p>سایتی از صفر، با زبان طراحی‌ای که فقط مال برند شماست.</p></div>
+  </section>
+  <section class="how" id="how" aria-labelledby="howh">
+    <h2 id="howh">چطور شروع می‌کنیم</h2>
+    <ol class="steps">
+      <li>پیام می‌دهید و از کسب‌وکارتان می‌گویید.</li>
+      <li>با هم یک قالب انتخاب می‌کنیم، یا طرح اختصاصی را شروع می‌کنیم.</li>
+      <li>سایت با محتوای شما ساخته و روی دامنهٔ خودتان تحویل می‌شود.</li>
+    </ol>
+  </section>
+  <p class="note">همهٔ برندهای این صفحه ساختگی‌اند و فقط برای نمایش طراحی ساخته شده‌اند.</p>
 </main>
 <nav class="cta" aria-label="تماس">
-        <a class="btn" href="#contact" data-placeholder>راه ارتباطی به‌زودی</a>
+    <a class="btn" href="#how" data-placeholder>راه ارتباطی به‌زودی</a>
 </nav>
 </body>
 </html>
